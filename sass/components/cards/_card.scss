@@ -1,0 +1,27 @@
+@use '../../util/variables' as var;
+/* Componente de carta y auxiliares */
+
+.card {
+    /* Componente de carta */
+    min-height: 8rem;
+
+    &__title {
+        font-size: var.$font-sz-lg;
+        text-transform: capitalize;
+    }
+
+    &__sub-title {
+        font-size: var.$font-sz-md;
+    }
+}
+
+.card-container {
+    /* para mejorar el manejo de las cartas */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.2rem;
+}
+
+.lg-card {}

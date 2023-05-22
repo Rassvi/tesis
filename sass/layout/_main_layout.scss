@@ -1,0 +1,24 @@
+@use '../util/variables' as var;
+/*
+    Layout principal, osease de "index"
+    la intención es solamente dar un esquema 
+    sin ser intrusivo a la hora de modificar componentes
+*/
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    background-color: var.$primary;
+    color: var.$secondary;
+    user-select: none;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    &__section {
+        display: flex;
+        min-height: 100vh;
+    }
+}

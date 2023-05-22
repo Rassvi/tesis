@@ -1,0 +1,12 @@
+@use '../util/variables' as var;
+// definiendo el footer como parcial
+
+.footer{
+    padding: 2rem;
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: var.$font-sz-sm;
+}

@@ -1,0 +1,10 @@
+// Tipografia
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Major+Mono+Display&display=swap');
+
+$base-font-1: 'Fira Mono', monospace;
+$base-font-2: 'Major Mono Display', monospace;
+
+
+h1 {
+    font-family: $base-font-1;
+}

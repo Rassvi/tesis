@@ -1,0 +1,47 @@
+@use 'variables' as var;
+
+/* Se controlan algunos aspectos de caja como Padding, margin etc */
+
+@for $i from 0 through 5 {
+    .p--#{$i} {
+        padding: (($i * 10) * 1px);
+    }
+
+    .m {
+        &--#{$i} {
+            margin: (($i * 10) * 1px);
+        }
+
+        &--top-#{$i} {
+            margin-top: (($i * 10) * 1px);
+        }
+
+        &--botom-#{$i} {
+            margin-bottom: (($i * 10) * 1px);
+        }
+
+        &--left-#{$i} {
+            margin-left: (($i * 10) * 1px);
+        }
+
+        &--right-#{$i} {
+            margin-right: (($i * 10) * 1px);
+        }
+    }
+}
+
+.border {
+    border-width: 1px;
+    border-style: solid;
+    border-color: map-get(var.$colores, "color-2");
+
+    &--2 {
+        border-width: 2px;
+    }
+}
+
+.rounded {
+    border-radius: 0.2rem;
+}
+
+// .shadow {}
