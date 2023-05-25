@@ -490,7 +490,7 @@ body {
 }
 
 .gap--1 {
-    gap: 0.2rem;
+    gap: 0.5rem;
 }
 
 .sz--2 {
@@ -500,7 +500,7 @@ body {
 }
 
 .gap--2 {
-    gap: 0.4rem;
+    gap: 1rem;
 }
 
 .sz--3 {
@@ -510,7 +510,7 @@ body {
 }
 
 .gap--3 {
-    gap: 0.6rem;
+    gap: 1.5rem;
 }
 
 .sz--4 {
@@ -520,7 +520,7 @@ body {
 }
 
 .gap--4 {
-    gap: 0.8rem;
+    gap: 2rem;
 }
 
 .sz--5 {
@@ -530,7 +530,7 @@ body {
 }
 
 .gap--5 {
-    gap: 1rem;
+    gap: 2.5rem;
 }
 
 .sz--6 {
@@ -540,7 +540,7 @@ body {
 }
 
 .gap--6 {
-    gap: 1.2rem;
+    gap: 3rem;
 }
 
 .sz--7 {
@@ -550,7 +550,7 @@ body {
 }
 
 .gap--7 {
-    gap: 1.4rem;
+    gap: 3.5rem;
 }
 
 .sz--8 {
@@ -560,7 +560,7 @@ body {
 }
 
 .gap--8 {
-    gap: 1.6rem;
+    gap: 4rem;
 }
 
 .sz--9 {
@@ -570,7 +570,7 @@ body {
 }
 
 .gap--9 {
-    gap: 1.8rem;
+    gap: 4.5rem;
 }
 
 .sz--10 {
@@ -580,7 +580,7 @@ body {
 }
 
 .gap--10 {
-    gap: 2rem;
+    gap: 5rem;
 }
 
 /* Como se comportará el texto */
