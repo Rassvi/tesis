@@ -2,30 +2,14 @@
 
 /* Se controlan algunos aspectos de caja como Padding, margin etc */
 
-@for $i from 0 through 5 {
+@for $i from 0 through 8 {
     .p--#{$i} {
-        padding: (($i * 10) * 1px);
+        padding: var.$base-padding * $i;
     }
 
     .m {
         &--#{$i} {
-            margin: (($i * 10) * 1px);
-        }
-
-        &--top-#{$i} {
-            margin-top: (($i * 10) * 1px);
-        }
-
-        &--botom-#{$i} {
-            margin-bottom: (($i * 10) * 1px);
-        }
-
-        &--left-#{$i} {
-            margin-left: (($i * 10) * 1px);
-        }
-
-        &--right-#{$i} {
-            margin-right: (($i * 10) * 1px);
+            margin: var.$base-margin * $i;
         }
     }
 }

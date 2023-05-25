@@ -127,47 +127,11 @@
 }
 
 @for $i from 0 through 10 {
-    
-}
-
-.sz {
-
-    // REEMPLAZAR POR UN GENERADOR DINÁMICO
-    /* Tamaños "Flex" */
-    &--1 {
-        flex: 1;
+    .sz--#{$i} {
+        flex: $i;
     }
 
-    &--2 {
-        flex: 2;
-    }
-
-    &--3 {
-        flex: 3;
-    }
-
-    &--4 {
-        flex: 4;
-    }
-}
-
-.gap { // Reemplazar por un generador
-
-    /* Tamaños del Gap */
-    &--1 {
-        gap: 0.2rem;
-    }
-
-    &--2 {
-        gap: 0.4rem;
-    }
-    &--3{
-        gap: 0.6rem;
-    }
-    &--4{
-        gap: 0.8rem;
-    }
-    &--5{
-        gap: 1rem;
+    .gap--#{$i} {
+        gap: 0.2rem * $i;
     }
 }
