@@ -3,38 +3,8 @@ $primary: #f8e7d3;
 $secondary: #0f2f57; // Para el texto
 $brand-color: #c83246;
 
-// Colores secundarios complementarios
-
-$colores: (
-    //PRIMARIOS
-    "primary": $primary,
-    "secondary": $secondary,
-    "teriary": $brand-color,
-
-    //COMPLEMENTARIOS
-    "color-1": #efdecd,
-    "color-2": #988e83,
-    "color-3": #df4b40,
-    "color-4": #ffa420,
-    "color-5": #fff0e5,
-    "color-6": #000040,
-    "color-7": #f6d18d,
-    "color-8": #497e7675,
-);
-
 // Fuente
 $base-font: 1rem;
-
-$font-sz-sm: 0.8rem;
-$font-sz-md: 1.2rem;
-$font-sz-lg: 1.4rem;
-$font-sz-xl: 1.6rem;
-$font-sz-xxl: 1.8rem;
-
-// Tamaños para "enfásis"
-$font-ef-nm: 2rem;
-$font-ef-md: 2.4rem;
-$font-ef-lg: 2.8rem;
 
 // Bordes
 $base-border: 1px;
@@ -43,13 +13,13 @@ $base-border: 1px;
 $base-padding: 0.75rem;
 
 // Margin
-$base-margin: 5px;
+$base-margin: 1em;
 
 // Bordes redondos
-$base-radius: 5px;
+$base-border-radius: 5px;
 
 // Gaps
 $base-gap: 0.5rem;
 
 // Sombra base
-$base-shadow: 1px 1px 1px 1px;
+$base-shadow: 1px 3px 1px 1px rgba(0, 0, 0, 0.3);

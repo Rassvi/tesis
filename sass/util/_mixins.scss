@@ -1,7 +1,54 @@
+@use 'variables' as variables;
 // Mixins para media responsive: :D
+
+@mixin xs { // Extra Small
+  @media (min-width: 0px) {
+    @content;
+  }
+}
+
+@mixin sm { // Small
+  @media (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin md { // Medium
+  @media (min-width: 760px) {
+    @content;
+  }
+}
+
+@mixin lg { // Large
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xl { // Extra large
+  @media (min-width: 1360px) {
+    @content;
+  }
+}
+
+@mixin breakpoint ($width) { // Breakpoint flexible
+  @media (min-width: $width) {
+    @content;
+  }
+}
 
 // Mixins para "theme"
 
 // Mixins para animaciones
 
 // Mixins extras:
+
+@mixin borders ($width, $style, $color: variables.$secondary) {
+  border-width: $width * 1px; // *1px para convertir x unidad a px
+  border-style: $style; // recibe el estilo de borde.
+  border-color: $color;
+}
+
+@mixin shadow ($x, $y, $blur-r, $spread, $color) {
+  box-shadow: $x $y $blur-r $spread $color;
+}

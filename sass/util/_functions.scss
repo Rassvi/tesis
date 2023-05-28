@@ -2,10 +2,10 @@
 
 // ---> >>Hacia el blanco<<
 @function clarecer ($color, $wheight) {
-    @return mix(#fff, $color, $wheight);
+  @return mix(#fff, $color, $wheight);
 }
 
 // ---> >>Hacia el negro<<
 @function oscurecer ($color, $wheight) {
-    @return mix(#000, $color, $wheight);
+  @return mix(#000, $color, $wheight);
 }

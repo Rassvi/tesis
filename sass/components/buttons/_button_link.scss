@@ -1,31 +1,33 @@
 @use '../../util/variables' as var;
+@use '../../util/util' as util;
 
 .link {
-    text-decoration: none;
-    text-align: center;
-    border-radius: 0.2rem;
-    transition: background 0.5ms;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0.2rem;
+  transition: background 0.5ms;
 
-    &:hover {
-        color: var.$primary;
-        background-color: var.$secondary;
+  &:hover {
+    color: var.$primary;
+    background-color: var.$secondary;
+  }
+
+  // DEFINITIVAMENTE MOVERLE ALGO
+  &__header {
+    padding: 0.6rem;
+
+    &--active {
+      color: var.$primary;
+      background-color: var.$brand-color;
+
+      &:hover {
+        color: var.$secondary;
+        background-color: map-get(util.$colores, "color-1");
+      }
     }
 
-    &__header {
-        padding: 0.6rem;
-
-        &--active {
-            color: var.$primary;
-            background-color: var.$brand-color;
-
-            &:hover {
-                color: var.$secondary;
-                background-color: map-get(var.$colores, "color-1");
-            }
-        }
-
-        &--inactive {
-            color: map-get(var.$colores, "color-1");
-        }
+    &--inactive {
+      color: map-get(util.$colores, "color-1");
     }
+  }
 }

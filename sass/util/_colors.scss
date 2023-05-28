@@ -1,0 +1,14 @@
+@use 'util' as var;
+
+/* Todo lo relacionado a colores en clases irá aquí */
+
+@each $key,
+$color in var.$colores {
+    .bg-c--#{$key} {
+        background-color: $color;
+    }
+
+    .text-c--#{$key} {
+        color: $color;
+    }
+}

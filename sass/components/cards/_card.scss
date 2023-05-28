@@ -1,27 +1,28 @@
 @use '../../util/variables' as var;
+@use '../../util/util' as util;
 /* Componente de carta y auxiliares */
 
 .card {
-    /* Componente de carta */
-    min-height: 8rem;
+  /* Componente de carta */
+  min-height: 8rem;
 
-    &__title {
-        font-size: var.$font-sz-lg;
-        text-transform: capitalize;
-    }
+  &__title {
+    font-size: map-get(util.$fuentes, "lg"); //lg
+    text-transform: capitalize;
+  }
 
-    &__sub-title {
-        font-size: var.$font-sz-md;
-    }
+  &__sub-title {
+    font-size: map-get(util.$fuentes, "md"); //md
+  }
 }
 
 .card-container {
-    /* para mejorar el manejo de las cartas */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.2rem;
+  /* para mejorar el manejo de las cartas */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.2rem;
 }
 
 .lg-card {}

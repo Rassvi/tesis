@@ -1,36 +1,37 @@
 @use '../util/variables' as var;
+@use '../util/util' as util;
 
 // Definiendo el header como parcial
-.header{
-    width: 100%;
-    background-color: var.$primary;
-    align-self: center;
+.header {
+  width: 100%;
+  background-color: var.$primary;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 0.5rem;
+
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+  &--top {
+    display: none;
+  }
+
+  &--scroll {
+    position: fixed;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    top: 0;
+  }
 
-    justify-content: space-evenly;
-    align-items: center;
-
-    padding: 0.5rem;
-
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-
-    &--top{
-        display: none;
-    }
-
-    &--scroll{
-        position: fixed;
-        display: flex;
-        top: 0;
-    }
-
-    &__title{
-        flex: 0.8;
-        text-align: center;
-        text-transform: capitalize;
-        font-size: var.$font-sz-xl;
-    }
+  &__title {
+    flex: 0.8;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: map-get(util.$fuentes, "xl");
+  }
 }

@@ -1,0 +1,208 @@
+@use 'sass:math';
+@use 'variables' as variables;
+
+// <!--CONTIENE LOS MAPAS NO LAS VARIABLES.-->
+// COLORES
+$colores: (
+  //PRIMARIOS
+  "primary": variables.$primary,
+  "secondary": variables.$secondary,
+  "teriary": variables.$brand-color,
+
+  //COMPLEMENTARIOS
+  "color-1": #efdecd,
+  "color-2": #988e83,
+  "color-3": #df4b40,
+  "color-4": #ffa420,
+  "color-5": #fff0e5,
+  "color-6": #000040,
+  "color-7": #f6d18d,
+  "color-8": #497e7675,
+);
+
+//FUENTES
+$fuentes: (
+  "sm": 0.75rem,
+  "md": 1.2rem,
+  "lg": 1.4rem,
+  "xl": 1.6rem,
+
+  "bs": 2rem,
+  "bm": 2.5rem,
+  "bl": 2.8rem,
+
+);
+
+//Mapa que tiene utilidades como, margenes, padding, display, position, etc.
+$utilities: (
+  "padding": ("prefix": "p",
+    "values": ("0": 0,
+      "1": variables.$base-padding,
+      "2": variables.$base-padding * 2,
+      "3": variables.$base-padding * 4,
+      "4": variables.$base-padding * 6,
+      "5": variables.$base-padding * 8),
+  ),
+
+  "padding-left": ("prefix": "p-l",
+    "values": ("0": 0,
+      "1": variables.$base-padding,
+      "2": variables.$base-padding * 2,
+      "3": variables.$base-padding * 4,
+      "4": variables.$base-padding * 6,
+      "5": variables.$base-padding * 8),
+  ),
+
+  "padding-right": ("prefix": "p-r",
+    "values": ("0": 0,
+      "1": variables.$base-padding,
+      "2": variables.$base-padding * 2,
+      "3": variables.$base-padding * 4,
+      "4": variables.$base-padding * 6,
+      "5": variables.$base-padding * 8),
+  ),
+
+  "padding-top": ("prefix": "p-t",
+    "values": ("0": 0,
+      "1": variables.$base-padding,
+      "2": variables.$base-padding * 2,
+      "3": variables.$base-padding * 4,
+      "4": variables.$base-padding * 6,
+      "5": variables.$base-padding * 8),
+  ),
+
+  "padding-bottom": ("prefix": "p-b",
+    "values": ("0": 0,
+      "1": variables.$base-padding,
+      "2": variables.$base-padding * 2,
+      "3": variables.$base-padding * 4,
+      "4": variables.$base-padding * 6,
+      "5": variables.$base-padding * 8),
+  ),
+
+  "margin": ("prefix": "m",
+    "values": ("0": 0,
+      "1": variables.$base-margin,
+      "2": variables.$base-margin * 2,
+      "3": variables.$base-margin * 4,
+      "4": variables.$base-margin * 6,
+      "5": variables.$base-margin * 8),
+  ),
+
+  "margin-left": ("prefix": "m-l",
+    "values": ("0": 0,
+      "1": variables.$base-margin,
+      "2": variables.$base-margin * 2,
+      "3": variables.$base-margin * 4,
+      "4": variables.$base-margin * 6,
+      "5": variables.$base-margin * 8),
+  ),
+
+  "margin-right": ("prefix": "m-r",
+    "values": ("0": 0,
+      "1": variables.$base-margin,
+      "2": variables.$base-margin * 2,
+      "3": variables.$base-margin * 4,
+      "4": variables.$base-margin * 6,
+      "5": variables.$base-margin * 8),
+  ),
+
+  "margin-top": ("prefix": "m-t",
+    "values": ("0": 0,
+      "1": variables.$base-margin,
+      "2": variables.$base-margin * 2,
+      "3": variables.$base-margin * 4,
+      "4": variables.$base-margin * 6,
+      "5": variables.$base-margin * 8),
+  ),
+
+  "margin-bottom": ("prefix": "m-b",
+    "values": ("0": 0,
+      "1": variables.$base-margin,
+      "2": variables.$base-margin * 2,
+      "3": variables.$base-margin * 4,
+      "4": variables.$base-margin * 6,
+      "5": variables.$base-margin * 8),
+  ),
+
+  "opacity": ("prefix": "opacity",
+    "values": ("10": 0.1,
+      "20": 0.2,
+      "30": 0.3,
+      "40": 0.4,
+      "50": 0.5,
+      "60": 0.6,
+      "70": 0.7,
+      "80": 0.8,
+      "90": 0.9,
+      "100": 1,
+    ),
+  ),
+
+  "border-radius": ("prefix": "radius",
+    "values": ("default": variables.$base-border-radius,
+      "none": 0,
+      "xs": math.div(variables.$base-border-radius, 4),
+      "sm": math.div(variables.$base-border-radius, 2),
+      "lg": variables.$base-border-radius * 2,
+      "full": 50%,
+    )),
+
+  "display": ("prefix": "display",
+    "values": ("n": none,
+      "b": block,
+      "flex": flex,
+      "i": inline,
+      "ib": inline-block,
+      "grid": grid,
+    )),
+
+  "flex-direction": ("prefix": "flex",
+    "values": ("row": row,
+      "col": column,
+      "row-r": row-reverse,
+      "col-r": column-reverse,
+    ),
+  ),
+
+  "justify-content": (
+    "prefix": "justify",
+    "values": (
+      "start": start,
+      "center": center,
+      "end": end,
+      "between": space-between,
+      "around": space-around,
+      "evenly": space-evenly,
+      "stretch": stretch,
+    ),
+  ),
+
+  "align-items": (
+    "prefix": "align",
+    "values": (
+      "stretch": stretch,
+      "center": center,
+      "start": start,
+      "end": end,
+    ),
+  ),
+
+  "position": ("prefix": "position",
+    "values": ("st": static,
+      "rel": relative,
+      "abs": absolute,
+      "fix": fixed,
+      "stc": sticky,
+    )),
+);
+
+// Mapa que contiene los valores para genrar bordes dinámicamente
+$tipos-borde: (
+  "border-style": (
+    "prefix": "style",
+    "values": ("default": solid,
+      "dotted": dotted,
+      "dashed": dashed,
+    ))
+);

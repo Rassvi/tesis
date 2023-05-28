@@ -2,32 +2,32 @@
 /* pensada para ser insertada en un link en lugar de un div */
 
 .hoverable-card {
-    /* si quieres que tenga un hover con translate */
-    flex-basis: 26%;
-    flex-shrink: 0;
+  /* si quieres que tenga un hover con translate */
+  flex-basis: 26%;
+  flex-shrink: 0;
+  display: flex;
+  min-height: 15rem;
+  text-align: center;
+
+  &__card {
+    flex: 1;
     display: flex;
-    min-height: 15rem;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
 
-    &__card {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  &__title {
+    min-width: 70%;
+  }
+
+  &:hover {
+    background-color: var.$secondary;
+    opacity: 1;
+    background-size: 12px 12px;
+    background-image: repeating-linear-gradient(45deg, var.$primary 0, var.$primary 1.2000000000000002px, var.$secondary 0, var.$secondary 50%);
+
+    .hoverable-card__card {
+      transform: translate(0.5rem, -0.5rem);
     }
-
-    &__title {
-        min-width: 70%;
-    }
-
-    &:hover {
-        background-color: var.$secondary;
-        opacity: 1;
-        background-size: 12px 12px;
-        background-image: repeating-linear-gradient(45deg, var.$primary 0, var.$primary 1.2000000000000002px, var.$secondary 0, var.$secondary 50%);
-
-        .hoverable-card__card {
-            transform: translate(0.5rem, -0.5rem);
-        }
-    }
+  }
 }

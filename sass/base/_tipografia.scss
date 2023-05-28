@@ -4,7 +4,10 @@
 $base-font-1: 'Fira Mono', monospace;
 $base-font-2: 'Major Mono Display', monospace;
 
+* {
+  font-family: $base-font-1;
+}
 
-h1 {
-    font-family: $base-font-1;
+.test {
+  font-family: $base-font-2;
 }
