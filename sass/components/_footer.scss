@@ -1,11 +1,7 @@
-@use '../util/util' as util;
+@use '../util/maps' as util;
 // definiendo el footer como parcial
 
 .footer {
-  padding: 2rem;
   min-height: 20vh;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
 }

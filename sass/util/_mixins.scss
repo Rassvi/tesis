@@ -43,6 +43,11 @@
 
 // Mixins extras:
 
+@mixin col ($width: 100%) {
+  flex-grow: 0;
+  width: $width;
+}
+
 @mixin borders ($width, $style, $color: variables.$secondary) {
   border-width: $width * 1px; // *1px para convertir x unidad a px
   border-style: $style; // recibe el estilo de borde.

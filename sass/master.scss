@@ -1,10 +1,12 @@
 // Base 
 @forward 'base/reset';
+@forward 'base/tipografia';
+
 // Util
 @forward 'util/colors';
-@forward 'util/box';
-@forward 'util/flex';
-@forward 'util/text';
+@forward 'util/util';
+@forward 'util/grid';
+
 // Layouts 
 @forward 'layout/main_layout';
 // Componentes
