@@ -6,6 +6,151 @@
 
 // Generador de propiedades utiles
 /* PROPIEDADES GENÉRICAS */
+
+/* Propiedades con Breakpoint */
+@include mixin.xs {
+
+  @each $propiedad,
+  $valores in util.$utilities {
+    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
+    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
+    // Se encarga de recorrer, el mapa que adquirió la $valor
+
+    @each $modificador,
+    $valores in $sub-mapa {
+      @if ($modificador =="default") {
+
+        // Si el modificador es un valor por defecto.
+        .#{$prefijo}--xs {
+          // Simplemente se le da el nombre del prefijo
+          #{$propiedad}: $valores;
+        }
+      }
+
+      @else {
+        .#{$prefijo}-xs--#{$modificador} {
+          #{$propiedad}: $valores;
+        }
+      }
+    }
+  }
+
+}
+
+@include mixin.sm {
+
+  @each $propiedad,
+  $valores in util.$utilities {
+    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
+    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
+    // Se encarga de recorrer, el mapa que adquirió la $valor
+
+    @each $modificador,
+    $valores in $sub-mapa {
+      @if ($modificador =="default") {
+
+        // Si el modificador es un valor por defecto.
+        .#{$prefijo}-sm {
+          // Simplemente se le da el nombre del prefijo
+          #{$propiedad}: $valores;
+        }
+      }
+
+      @else {
+        .#{$prefijo}-sm--#{$modificador} {
+          #{$propiedad}: $valores;
+        }
+      }
+    }
+  }
+}
+
+@include mixin.md {
+
+  @each $propiedad,
+  $valores in util.$utilities {
+    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
+    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
+    // Se encarga de recorrer, el mapa que adquirió la $valor
+
+    @each $modificador,
+    $valores in $sub-mapa {
+      @if ($modificador =="default") {
+
+        // Si el modificador es un valor por defecto.
+        .#{$prefijo}-md {
+          // Simplemente se le da el nombre del prefijo
+          #{$propiedad}: $valores;
+        }
+      }
+
+      @else {
+        .#{$prefijo}-sm--#{$modificador} {
+          #{$propiedad}: $valores;
+        }
+      }
+    }
+  }
+}
+
+@include mixin.lg {
+
+  @each $propiedad,
+  $valores in util.$utilities {
+    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
+    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
+    // Se encarga de recorrer, el mapa que adquirió la $valor
+
+    @each $modificador,
+    $valores in $sub-mapa {
+      @if ($modificador =="default") {
+
+        // Si el modificador es un valor por defecto.
+        .#{$prefijo}-lg {
+          // Simplemente se le da el nombre del prefijo
+          #{$propiedad}: $valores;
+        }
+      }
+
+      @else {
+        .#{$prefijo}-lg--#{$modificador} {
+          #{$propiedad}: $valores;
+        }
+      }
+    }
+  }
+}
+
+@include mixin.xl {
+
+  @each $propiedad,
+  $valores in util.$utilities {
+    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
+    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
+    // Se encarga de recorrer, el mapa que adquirió la $valor
+
+    @each $modificador,
+    $valores in $sub-mapa {
+      @if ($modificador =="default") {
+
+        // Si el modificador es un valor por defecto.
+        .#{$prefijo}-xl {
+          // Simplemente se le da el nombre del prefijo
+          #{$propiedad}: $valores;
+        }
+      }
+
+      @else {
+        .#{$prefijo}-xl--#{$modificador} {
+          #{$propiedad}: $valores;
+        }
+      }
+    }
+  }
+}
+
+/* Propiedades generales */
+
 @each $propiedad,
 $valores in util.$utilities {
   $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
