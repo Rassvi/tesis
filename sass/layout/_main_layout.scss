@@ -2,7 +2,7 @@
 
 /*
     Layout principal, osease de "index"
-    ELIMINAR
+    ELIMINAR y Cambiar
 */
 .main-layout {
   display: flex;
@@ -16,9 +16,4 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-
-  &__section {
-    display: flex;
-    min-height: 100vh;
-  }
 }

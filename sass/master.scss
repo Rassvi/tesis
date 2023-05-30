@@ -9,12 +9,9 @@
 
 // Layouts 
 @forward 'layout/main_layout';
+
 // Componentes
-@forward 'components/nav';
 @forward 'components/image';
-@forward 'components/header';
-@forward 'components/footer';
-@forward 'components/cards/card';
-@forward 'components/cards/card_link';
-@forward 'components/buttons/button_link';
-@forward 'components/buttons/button_form';
+
+// En DRAFT
+@forward 'draft/footer';

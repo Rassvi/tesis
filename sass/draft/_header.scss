@@ -1,0 +1,10 @@
+@use '../util/maps' as map;
+
+.header {
+    display: flex;
+    flex-direction: row;
+
+    &__title {
+        font-size: map-get(map.$fuentes, "xl");
+    }
+}

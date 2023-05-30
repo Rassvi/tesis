@@ -1,5 +1,4 @@
 // -- MISC, genera clases que simplemente son visuales. Fondos animaciones etc. 
-
 @mixin bg-decorated ($opacity, $positionX, $positionY, $sz, $colorA, $colorB) {
   opacity: $opacity;
   background-position: 0px 0px $positionX $positionY;
@@ -29,10 +28,6 @@
 }
 
 .misc {
-  &__dotted {
-    @include bg-decorated(1, 12px, 12px, 24px, red, blue);
-  }
-
   &__diag {
     opacity: 1;
     background-size: 60px 60px;
