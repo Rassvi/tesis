@@ -1,208 +1,149 @@
-@use 'sass:math';
-@use 'variables' as variables;
+@use 'variables' as var;
+@use 'mixins' as mixin;
+@use 'maps' as util;
 
-// <!--CONTIENE LOS MAPAS NO LAS VARIABLES.-->
-// COLORES
-$colores: (
-  //PRIMARIOS
-  "primary": variables.$primary,
-  "secondary": variables.$secondary,
-  "teriary": variables.$brand-color,
+/* PROPIEDADES */
 
-  //COMPLEMENTARIOS
-  "color-1": #efdecd,
-  "color-2": #988e83,
-  "color-3": #df4b40,
-  "color-4": #ffa420,
-  "color-5": #fff0e5,
-  "color-6": #000040,
-  "color-7": #f6d18d,
-  "color-8": #497e7675,
-);
+// Generador de propiedades utiles
+/* PROPIEDADES GENÉRICAS */
+@each $propiedad,
+$valores in util.$utilities {
+  $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
+  $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
+  // Se encarga de recorrer, el mapa que adquirió la $valor
 
-//FUENTES
-$fuentes: (
-  "sm": 0.75rem,
-  "md": 1.2rem,
-  "lg": 1.4rem,
-  "xl": 1.6rem,
+  @each $modificador,
+  $valores in $sub-mapa {
+    @if ($modificador =="default") {
 
-  "bs": 2rem,
-  "bm": 2.5rem,
-  "bl": 2.8rem,
+      // Si el modificador es un valor por defecto.
+      .#{$prefijo} {
+        // Simplemente se le da el nombre del prefijo
+        #{$propiedad}: $valores;
+      }
+    }
 
-);
+    @else {
+      .#{$prefijo}--#{$modificador} {
+        #{$propiedad}: $valores;
+      }
+    }
+  }
+}
 
-//Mapa que tiene utilidades como, margenes, padding, display, position, etc.
-$utilities: (
-  "padding": ("prefix": "p",
-    "values": ("0": 0,
-      "1": variables.$base-padding,
-      "2": variables.$base-padding * 2,
-      "3": variables.$base-padding * 4,
-      "4": variables.$base-padding * 6,
-      "5": variables.$base-padding * 8),
-  ),
+/* PROPIEDADES FLEX */
+// UTILIZAR NOMBRES MÁS CONCRETOS
+@each $propiedad,
+$valor in util.$flex {
+  $prefijo: map-get($valor, "prefix");
+  $sub-mapa: map-get($valor, "values");
 
-  "padding-left": ("prefix": "p-l",
-    "values": ("0": 0,
-      "1": variables.$base-padding,
-      "2": variables.$base-padding * 2,
-      "3": variables.$base-padding * 4,
-      "4": variables.$base-padding * 6,
-      "5": variables.$base-padding * 8),
-  ),
+  @each $k,
+  $v in $sub-mapa {
+    @if ($k =="default") {
+      .#{$prefijo} {
+        #{$propiedad}: $v;
+      }
+    }
 
-  "padding-right": ("prefix": "p-r",
-    "values": ("0": 0,
-      "1": variables.$base-padding,
-      "2": variables.$base-padding * 2,
-      "3": variables.$base-padding * 4,
-      "4": variables.$base-padding * 6,
-      "5": variables.$base-padding * 8),
-  ),
+    @else {
+      .#{$prefijo}--#{$k} {
+        #{$propiedad}: $v;
+      }
+    }
+  }
+}
 
-  "padding-top": ("prefix": "p-t",
-    "values": ("0": 0,
-      "1": variables.$base-padding,
-      "2": variables.$base-padding * 2,
-      "3": variables.$base-padding * 4,
-      "4": variables.$base-padding * 6,
-      "5": variables.$base-padding * 8),
-  ),
+/* PROPIEDADES de TEXTO y FUENTE */
+// Genera tamaños de fuente
+@each $key,
+$value in util.$fuentes {
+  .font-#{$key} {
+    font-size: $value;
+  }
+}
 
-  "padding-bottom": ("prefix": "p-b",
-    "values": ("0": 0,
-      "1": variables.$base-padding,
-      "2": variables.$base-padding * 2,
-      "3": variables.$base-padding * 4,
-      "4": variables.$base-padding * 6,
-      "5": variables.$base-padding * 8),
-  ),
+@each $propiedad,
+$valor in util.$text {
+  $prefijo: map-get($valor, "prefix");
+  $sub-mapa: map-get($valor, "values");
 
-  "margin": ("prefix": "m",
-    "values": ("0": 0,
-      "1": variables.$base-margin,
-      "2": variables.$base-margin * 2,
-      "3": variables.$base-margin * 4,
-      "4": variables.$base-margin * 6,
-      "5": variables.$base-margin * 8),
-  ),
+  @each $k,
+  $v in $sub-mapa {
+    @if ($k =="default") {
+      .#{$prefijo} {
+        #{$propiedad}: $v;
+      }
+    }
 
-  "margin-left": ("prefix": "m-l",
-    "values": ("0": 0,
-      "1": variables.$base-margin,
-      "2": variables.$base-margin * 2,
-      "3": variables.$base-margin * 4,
-      "4": variables.$base-margin * 6,
-      "5": variables.$base-margin * 8),
-  ),
+    @else {
+      .#{$prefijo}--#{$k} {
+        #{$propiedad}: $v;
+      }
+    }
+  }
+}
 
-  "margin-right": ("prefix": "m-r",
-    "values": ("0": 0,
-      "1": variables.$base-margin,
-      "2": variables.$base-margin * 2,
-      "3": variables.$base-margin * 4,
-      "4": variables.$base-margin * 6,
-      "5": variables.$base-margin * 8),
-  ),
 
-  "margin-top": ("prefix": "m-t",
-    "values": ("0": 0,
-      "1": variables.$base-margin,
-      "2": variables.$base-margin * 2,
-      "3": variables.$base-margin * 4,
-      "4": variables.$base-margin * 6,
-      "5": variables.$base-margin * 8),
-  ),
+/*  */
 
-  "margin-bottom": ("prefix": "m-b",
-    "values": ("0": 0,
-      "1": variables.$base-margin,
-      "2": variables.$base-margin * 2,
-      "3": variables.$base-margin * 4,
-      "4": variables.$base-margin * 6,
-      "5": variables.$base-margin * 8),
-  ),
+// Similar a la anterior, pero aplicada a los bordes.
 
-  "opacity": ("prefix": "opacity",
-    "values": ("10": 0.1,
-      "20": 0.2,
-      "30": 0.3,
-      "40": 0.4,
-      "50": 0.5,
-      "60": 0.6,
-      "70": 0.7,
-      "80": 0.8,
-      "90": 0.9,
-      "100": 1,
-    ),
-  ),
+/* PROPIEDADES de BORDES */
+@each $propiedad,
+$valores in util.$tipos-borde {
+  $sub-mapa: map-get($valores, "values");
 
-  "border-radius": ("prefix": "radius",
-    "values": ("default": variables.$base-border-radius,
-      "none": 0,
-      "xs": math.div(variables.$base-border-radius, 4),
-      "sm": math.div(variables.$base-border-radius, 2),
-      "lg": variables.$base-border-radius * 2,
-      "full": 50%,
-    )),
+  @each $modificador,
+  $valores in $sub-mapa {
 
-  "display": ("prefix": "display",
-    "values": ("n": none,
-      "b": block,
-      "flex": flex,
-      "i": inline,
-      "ib": inline-block,
-      "grid": grid,
-    )),
+    @each $identificador,
+    $color in util.$colores {
+      @for $i from 1 through 2 {
 
-  "flex-direction": ("prefix": "flex",
-    "values": ("row": row,
-      "col": column,
-      "row-r": row-reverse,
-      "col-r": column-reverse,
-    ),
-  ),
+        // Da el tamaño a el borde, ya que en el mixin se multiplica.
+        @if ($identificador =="secondary") {
 
-  "justify-content": (
-    "prefix": "justify",
-    "values": (
-      "start": start,
-      "center": center,
-      "end": end,
-      "between": space-between,
-      "around": space-around,
-      "evenly": space-evenly,
-      "stretch": stretch,
-    ),
-  ),
+          // si el color es el secundario por "defecto"
+          @if($modificador =="default") {
 
-  "align-items": (
-    "prefix": "align",
-    "values": (
-      "stretch": stretch,
-      "center": center,
-      "start": start,
-      "end": end,
-    ),
-  ),
+            // Bordes por defecto, "SOLID"
+            .border--#{$i} {
+              @include mixin.borders($i, $valores);
+            }
+          }
 
-  "position": ("prefix": "position",
-    "values": ("st": static,
-      "rel": relative,
-      "abs": absolute,
-      "fix": fixed,
-      "stc": sticky,
-    )),
-);
+          @else {
+            .border--#{$modificador}-#{$i} {
+              // Otros estilos de bordes
+              @include mixin.borders($i, $valores);
+            }
+          }
+        }
 
-// Mapa que contiene los valores para genrar bordes dinámicamente
-$tipos-borde: (
-  "border-style": (
-    "prefix": "style",
-    "values": ("default": solid,
-      "dotted": dotted,
-      "dashed": dashed,
-    ))
-);
+        // si el color no es secundario, otros valores
+        @else {
+          @if($modificador =="default") {
+
+            // Bordes por defecto, "SOLID"
+            .border--#{$i}-#{$identificador} {
+              @include mixin.borders($i, $valores, $color);
+            }
+          }
+
+          @else {
+            .border--#{$modificador}-#{$i}-#{$identificador} {
+              // Otros estilos de bordes
+              @include mixin.borders($i, $valores, $color);
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+
+// .shadow {}
