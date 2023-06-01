@@ -1,47 +1,83 @@
 @use 'variables' as variables;
 // Mixins para media responsive: :D
 
-@mixin xs { // Extra Small
+@mixin xs {
+
+  // Extra Small
   @media (min-width: 0px) {
     @content;
   }
 }
 
-@mixin sm { // Small
+@mixin sm {
+
+  // Small
   @media (min-width: 480px) {
     @content;
   }
 }
 
-@mixin md { // Medium
+@mixin md {
+
+  // Medium
   @media (min-width: 760px) {
     @content;
   }
 }
 
-@mixin lg { // Large
+@mixin lg {
+
+  // Large
   @media (min-width: 1200px) {
     @content;
   }
 }
 
-@mixin xl { // Extra large
+@mixin xl {
+
+  // Extra large
   @media (min-width: 1360px) {
     @content;
   }
 }
 
-@mixin breakpoint ($width) { // Breakpoint flexible
+@mixin breakpoint ($width) {
+
+  // Breakpoint flexible
   @media (min-width: $width) {
     @content;
   }
 }
 
-// Mixins para "theme"
-
-// Mixins para animaciones
-
 // Mixins extras:
+
+@mixin crear-propiedad($map, $bp: "") {
+
+  @each $propiedad,
+  $valores in $map {
+    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
+    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
+    // Se encarga de recorrer, el mapa que adquirió la $valor
+
+    @each $modificador,
+    $valores in $sub-mapa {
+      @if ($modificador =="default") {
+
+        // Si el modificador es un valor por defecto.
+        .#{$prefijo}#{$bp} {
+          // Simplemente se le da el nombre del prefijo
+          #{$propiedad}: $valores;
+        }
+      }
+
+      @else {
+        .#{$prefijo}#{$bp}--#{$modificador} {
+          #{$propiedad}: $valores;
+        }
+      }
+    }
+  }
+}
 
 @mixin col ($width: 100%) {
   flex-grow: 0;
@@ -54,6 +90,6 @@
   border-color: $color;
 }
 
-@mixin shadow ($x, $y, $blur-r, $spread, $color) {
-  box-shadow: $x $y $blur-r $spread $color;
+@mixin shadow ($color) {
+  box-shadow: variables.$base-shadow $blur-r $spread $color;
 }

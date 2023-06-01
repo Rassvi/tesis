@@ -6,201 +6,36 @@
 
 // Generador de propiedades utiles
 /* PROPIEDADES GENÉRICAS */
+@include mixin.crear-propiedad(util.$utilities);
 
 /* Propiedades con Breakpoint */
 @include mixin.xs {
-
-  @each $propiedad,
-  $valores in util.$utilities {
-    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
-    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
-    // Se encarga de recorrer, el mapa que adquirió la $valor
-
-    @each $modificador,
-    $valores in $sub-mapa {
-      @if ($modificador =="default") {
-
-        // Si el modificador es un valor por defecto.
-        .#{$prefijo}--xs {
-          // Simplemente se le da el nombre del prefijo
-          #{$propiedad}: $valores;
-        }
-      }
-
-      @else {
-        .#{$prefijo}-xs--#{$modificador} {
-          #{$propiedad}: $valores;
-        }
-      }
-    }
-  }
-
+  @include mixin.crear-propiedad(util.$utilities, "-xs");
 }
 
 @include mixin.sm {
-
-  @each $propiedad,
-  $valores in util.$utilities {
-    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
-    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
-    // Se encarga de recorrer, el mapa que adquirió la $valor
-
-    @each $modificador,
-    $valores in $sub-mapa {
-      @if ($modificador =="default") {
-
-        // Si el modificador es un valor por defecto.
-        .#{$prefijo}-sm {
-          // Simplemente se le da el nombre del prefijo
-          #{$propiedad}: $valores;
-        }
-      }
-
-      @else {
-        .#{$prefijo}-sm--#{$modificador} {
-          #{$propiedad}: $valores;
-        }
-      }
-    }
-  }
+  @include mixin.crear-propiedad(util.$utilities, "-sm");
 }
 
 @include mixin.md {
-
-  @each $propiedad,
-  $valores in util.$utilities {
-    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
-    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
-    // Se encarga de recorrer, el mapa que adquirió la $valor
-
-    @each $modificador,
-    $valores in $sub-mapa {
-      @if ($modificador =="default") {
-
-        // Si el modificador es un valor por defecto.
-        .#{$prefijo}-md {
-          // Simplemente se le da el nombre del prefijo
-          #{$propiedad}: $valores;
-        }
-      }
-
-      @else {
-        .#{$prefijo}-sm--#{$modificador} {
-          #{$propiedad}: $valores;
-        }
-      }
-    }
-  }
+  @include mixin.crear-propiedad(util.$utilities, "-md");
 }
 
 @include mixin.lg {
-
-  @each $propiedad,
-  $valores in util.$utilities {
-    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
-    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
-    // Se encarga de recorrer, el mapa que adquirió la $valor
-
-    @each $modificador,
-    $valores in $sub-mapa {
-      @if ($modificador =="default") {
-
-        // Si el modificador es un valor por defecto.
-        .#{$prefijo}-lg {
-          // Simplemente se le da el nombre del prefijo
-          #{$propiedad}: $valores;
-        }
-      }
-
-      @else {
-        .#{$prefijo}-lg--#{$modificador} {
-          #{$propiedad}: $valores;
-        }
-      }
-    }
-  }
+  @include mixin.crear-propiedad(util.$utilities, "-lg");
 }
 
 @include mixin.xl {
-
-  @each $propiedad,
-  $valores in util.$utilities {
-    $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
-    $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
-    // Se encarga de recorrer, el mapa que adquirió la $valor
-
-    @each $modificador,
-    $valores in $sub-mapa {
-      @if ($modificador =="default") {
-
-        // Si el modificador es un valor por defecto.
-        .#{$prefijo}-xl {
-          // Simplemente se le da el nombre del prefijo
-          #{$propiedad}: $valores;
-        }
-      }
-
-      @else {
-        .#{$prefijo}-xl--#{$modificador} {
-          #{$propiedad}: $valores;
-        }
-      }
-    }
-  }
-}
-
-/* Propiedades generales */
-
-@each $propiedad,
-$valores in util.$utilities {
-  $prefijo: map-get($valores, "prefix"); // Adquiere el valor que tenga "prefix" dentro del mapa anidado.
-  $sub-mapa: map-get($valores, "values"); // Toma los valores del mapa anidado y se vuele un mapa
-  // Se encarga de recorrer, el mapa que adquirió la $valor
-
-  @each $modificador,
-  $valores in $sub-mapa {
-    @if ($modificador =="default") {
-
-      // Si el modificador es un valor por defecto.
-      .#{$prefijo} {
-        // Simplemente se le da el nombre del prefijo
-        #{$propiedad}: $valores;
-      }
-    }
-
-    @else {
-      .#{$prefijo}--#{$modificador} {
-        #{$propiedad}: $valores;
-      }
-    }
-  }
+  @include mixin.crear-propiedad(util.$utilities, "-xl");
 }
 
 /* PROPIEDADES FLEX */
 // UTILIZAR NOMBRES MÁS CONCRETOS
-@each $propiedad,
-$valor in util.$flex {
-  $prefijo: map-get($valor, "prefix");
-  $sub-mapa: map-get($valor, "values");
-
-  @each $k,
-  $v in $sub-mapa {
-    @if ($k =="default") {
-      .#{$prefijo} {
-        #{$propiedad}: $v;
-      }
-    }
-
-    @else {
-      .#{$prefijo}--#{$k} {
-        #{$propiedad}: $v;
-      }
-    }
-  }
-}
+@include mixin.crear-propiedad(util.$flex);
 
 /* PROPIEDADES de TEXTO y FUENTE */
 // Genera tamaños de fuente
+/* Fuente */
 @each $key,
 $value in util.$fuentes {
   .font-#{$key} {
@@ -208,29 +43,9 @@ $value in util.$fuentes {
   }
 }
 
-@each $propiedad,
-$valor in util.$text {
-  $prefijo: map-get($valor, "prefix");
-  $sub-mapa: map-get($valor, "values");
+/*Texto*/
 
-  @each $k,
-  $v in $sub-mapa {
-    @if ($k =="default") {
-      .#{$prefijo} {
-        #{$propiedad}: $v;
-      }
-    }
-
-    @else {
-      .#{$prefijo}--#{$k} {
-        #{$propiedad}: $v;
-      }
-    }
-  }
-}
-
-
-/*  */
+@include mixin.crear-propiedad(util.$text);
 
 // Similar a la anterior, pero aplicada a los bordes.
 
@@ -288,7 +103,5 @@ $valores in util.$tipos-borde {
     }
   }
 }
-
-
 
 // .shadow {}
