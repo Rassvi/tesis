@@ -159,19 +159,35 @@ body {
 }
 
 .bg-c--secondary {
-    background-color: #988e83;
+    background-color: #313131;
 }
 
 .text-c--secondary {
-    color: #988e83;
+    color: #313131;
 }
 
-.bg-c--teriary {
-    background-color: #c83246;
+.bg-c--white {
+    background-color: #fafbfd;
 }
 
-.text-c--teriary {
-    color: #c83246;
+.text-c--white {
+    color: #fafbfd;
+}
+
+.bg-c--error {
+    background-color: #df4b40;
+}
+
+.text-c--error {
+    color: #df4b40;
+}
+
+.bg-c--success {
+    background-color: #308446;
+}
+
+.text-c--success {
+    color: #308446;
 }
 
 /* PROPIEDADES */
@@ -2121,25 +2137,49 @@ body {
 .border--1 {
     border-width: 1px;
     border-style: solid;
-    border-color: #988e83;
+    border-color: #313131;
 }
 
 .border--2 {
     border-width: 2px;
     border-style: solid;
-    border-color: #988e83;
+    border-color: #313131;
 }
 
-.border--1-teriary {
+.border--1-white {
     border-width: 1px;
     border-style: solid;
-    border-color: #c83246;
+    border-color: #fafbfd;
 }
 
-.border--2-teriary {
+.border--2-white {
     border-width: 2px;
     border-style: solid;
-    border-color: #c83246;
+    border-color: #fafbfd;
+}
+
+.border--1-error {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #df4b40;
+}
+
+.border--2-error {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #df4b40;
+}
+
+.border--1-success {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #308446;
+}
+
+.border--2-success {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #308446;
 }
 
 .border--dotted-1-primary {
@@ -2157,25 +2197,49 @@ body {
 .border--dotted-1 {
     border-width: 1px;
     border-style: dotted;
-    border-color: #988e83;
+    border-color: #313131;
 }
 
 .border--dotted-2 {
     border-width: 2px;
     border-style: dotted;
-    border-color: #988e83;
+    border-color: #313131;
 }
 
-.border--dotted-1-teriary {
+.border--dotted-1-white {
     border-width: 1px;
     border-style: dotted;
-    border-color: #c83246;
+    border-color: #fafbfd;
 }
 
-.border--dotted-2-teriary {
+.border--dotted-2-white {
     border-width: 2px;
     border-style: dotted;
-    border-color: #c83246;
+    border-color: #fafbfd;
+}
+
+.border--dotted-1-error {
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #df4b40;
+}
+
+.border--dotted-2-error {
+    border-width: 2px;
+    border-style: dotted;
+    border-color: #df4b40;
+}
+
+.border--dotted-1-success {
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #308446;
+}
+
+.border--dotted-2-success {
+    border-width: 2px;
+    border-style: dotted;
+    border-color: #308446;
 }
 
 .border--dashed-1-primary {
@@ -2193,25 +2257,49 @@ body {
 .border--dashed-1 {
     border-width: 1px;
     border-style: dashed;
-    border-color: #988e83;
+    border-color: #313131;
 }
 
 .border--dashed-2 {
     border-width: 2px;
     border-style: dashed;
-    border-color: #988e83;
+    border-color: #313131;
 }
 
-.border--dashed-1-teriary {
+.border--dashed-1-white {
     border-width: 1px;
     border-style: dashed;
-    border-color: #c83246;
+    border-color: #fafbfd;
 }
 
-.border--dashed-2-teriary {
+.border--dashed-2-white {
     border-width: 2px;
     border-style: dashed;
-    border-color: #c83246;
+    border-color: #fafbfd;
+}
+
+.border--dashed-1-error {
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #df4b40;
+}
+
+.border--dashed-2-error {
+    border-width: 2px;
+    border-style: dashed;
+    border-color: #df4b40;
+}
+
+.border--dashed-1-success {
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #308446;
+}
+
+.border--dashed-2-success {
+    border-width: 2px;
+    border-style: dashed;
+    border-color: #308446;
 }
 
 .container {
