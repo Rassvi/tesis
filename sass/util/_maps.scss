@@ -9,6 +9,10 @@ $colores: (
   "secondary": variables.$secondary,
   "teriary": variables.$brand-color,
 
+  "white": #fafbfd,
+  "error": #df4b40,
+  "success": #308446,
+
   //COMPLEMENTARIOS
   // "color-1": #efdecd,
   // "color-2": #df4b40,
@@ -20,13 +24,14 @@ $colores: (
 
 //FUENTES
 $fuentes: (
-  "sm": 0.75rem,
+  "xs": 0.8rem,
+  "sm": 1rem,
   "md": 1.2rem,
   "lg": 1.4rem,
   "xl": 1.6rem,
 
   "bs": 2rem,
-  "bm": 2.5rem,
+  "bm": 2.4rem,
   "bl": 2.8rem,
 );
 
@@ -161,6 +166,19 @@ $utilities: (
       "fix": fixed,
       "stc": sticky,
     )),
+
+    "box-shadow": 
+    (
+      "prefix": "shadow",
+      "values": 
+      (
+        "default": variables.$base-shadow rgba(variables.$black, 0.1),
+        "sm": variables.$base-shadow-sm rgba(variables.$black, 0.125),
+        "md": variables.$base-shadow-md rgba(variables.$black, 0.150),
+        "xl": variables.$base-shadow-xl rgba(variables.$black, 0.175),
+        "none": none,
+      )
+    )
 );
 
 // PROPIEDADES FLEX

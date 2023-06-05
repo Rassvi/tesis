@@ -52,53 +52,49 @@ $value in util.$fuentes {
 /* PROPIEDADES de BORDES */
 @each $propiedad,
 $valores in util.$tipos-borde {
-  $sub-mapa: map-get($valores, "values");
+  $sub-mapa: map-get($valores, "values"); // toma los valores del tipo de borde
 
+  
   @each $modificador,
   $valores in $sub-mapa {
 
     @each $identificador,
     $color in util.$colores {
-      @for $i from 1 through 2 {
 
-        // Da el tamaño a el borde, ya que en el mixin se multiplica.
-        @if ($identificador =="secondary") {
+      @if ($identificador =="secondary") {
 
-          // si el color es el secundario por "defecto"
-          @if($modificador =="default") {
-
-            // Bordes por defecto, "SOLID"
-            .border--#{$i} {
-              @include mixin.borders($i, $valores);
-            }
-          }
-
-          @else {
-            .border--#{$modificador}-#{$i} {
-              // Otros estilos de bordes
-              @include mixin.borders($i, $valores);
-            }
+        // si el color es el secundario por "defecto"
+        @if($modificador =="default") {
+          // Bordes por defecto, "SOLID"
+          .border {
+            @include mixin.borders($valores);
           }
         }
 
-        // si el color no es secundario, otros valores
         @else {
-          @if($modificador =="default") {
-
-            // Bordes por defecto, "SOLID"
-            .border--#{$i}-#{$identificador} {
-              @include mixin.borders($i, $valores, $color);
-            }
+          .border--#{$modificador} {
+            // Otros estilos de bordes
+            @include mixin.borders($valores);
           }
+        }
+      }
 
-          @else {
-            .border--#{$modificador}-#{$i}-#{$identificador} {
-              // Otros estilos de bordes
-              @include mixin.borders($i, $valores, $color);
-            }
+      // si el color no es secundario, otros valores
+      @else {
+        @if($modificador =="default") {
+
+          // Bordes por defecto, "SOLID"
+          .border--#{$identificador} {
+            @include mixin.borders($valores, $color);
           }
         }
 
+        @else {
+          .border--#{$modificador}-#{$identificador} {
+            // Otros estilos de bordes
+            @include mixin.borders($valores, $color);
+          }
+        }
       }
     }
   }

@@ -8,39 +8,98 @@
     <meta name="description" content="Aprende las bases para diseñar paginas web y expandir aún más tu conocimiento">
     <link rel="shortcut icon" href="img/pfp.png" type="image/x-icon">
     <link rel="stylesheet" href="css/master.css">
-    <title>Tutoriales 122</title>
+    <title>Bulldog CSS</title>
 </head>
 
 <body class="main-layout user--none"> <!-- clase user será definida después -->
-
     <!-- Inicio del Header -->
     <header class="header">
-        <h1 class="header__title">funciones basicas</h1>
+        <div class="container display--flex flex--row justify--around align--center">
+            <h2 class="header__title">Bulldogs CSS</h2>
+
+            <a href="#">EXAMPLE</a>
+        </div>
     </header>
     <!-- Fin del Header -->
 
     <!-- Inicio del main -->
     <main class="main-content">
+        <!-- inicio -->
         <section class="container">
             <section class="row">
-                <div class="card col--4 bg-c--primary p--2"></div>
-                <div class="card col--4 bg-c--secondary p--2"></div>
-                <div class="card col--4 bg-c--teriary p--2"></div>
+                <div class="col--6">
+                    <img src="img/sample.jpg" alt="sample">
+                </div>
+
+                <div class="col--6 display--flex flex--col justify--center p--1">
+                    <div class="card bg-c--white shadow--md p--1 radius--lg text-algin--center">
+                        <p class="font-xl m-b--1">Bulldog CSS</p>
+                        <p class="font-sm">Una librería de clases CSS escrita en SASS</p>
+                    </div>
+                </div>
             </section>
         </section>
+
+        <!-- services -->
+        <section class="container">
+            <p class="font-xl m-b--1 m-t--1 p--1">Distintos tamaños de fuente</p>
+
+            <div class="row justify--center text-algin--center">
+                <div class="card radius--lg col--6 align--center shadow--md p--2">
+                    <p class="font-xs">Lorem, ipsum.</p>
+                    <p class="font-sm">Lorem, ipsum.</p>
+                    <p class="font-md">Lorem, ipsum.</p>
+                    <p class="font-lg">Lorem, ipsum.</p>
+                    <p class="font-xl">Lorem, ipsum.</p>
+                    <p class="font-bs">Lorem, ipsum.</p>
+                    <p class="font-bm">Lorem, ipsum.</p>
+                    <p class="font-bl">Lorem, ipsum.</p>
+                </div>
+            </div>
+
+            <p class="font-xl m-b--1 m-t--1 p--1">Distintos colores de fuente</p>
+            <div class="row text-algin--center justify--around">
+                <div class="card radius--lg col--4 align--center shadow--md p--2">
+                    <p class="font-xs text-c--primary">Lorem, ipsum.</p>
+                    <p class="font-sm text-c--secondary">Lorem, ipsum.</p>
+                    <p class="font-md text-c--error">Lorem, ipsum.</p>
+                    <p class="font-lg text-c--success">Lorem, ipsum.</p>
+                    <p class="font-xl text-c--teriary">Lorem, ipsum.</p>
+                </div>
+
+                <!-- Poner fondo en negro xd -->
+                <div class="card radius--lg col--4 align--center shadow--md p--2">
+                    <p class="font-xs text-c--primary">Lorem, ipsum.</p>
+                    <p class="font-sm text-c--secondary">Lorem, ipsum.</p>
+                    <p class="font-md text-c--error">Lorem, ipsum.</p>
+                    <p class="font-lg text-c--success">Lorem, ipsum.</p>
+                    <p class="font-xl text-c--teriary">Lorem, ipsum.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+            </div>
+        </section>
+
+
     </main>
     <!-- Fin del main -->
 
     <!-- Pie de página -->
     <footer class="footer">
-        <ul class="display--flex flex--col sz--1 font-sm justify--center align--center">
-            <li>Página creada por Alumnos del plantel CBTis122</li>
-        </ul>
+        <section class="container display--flex flex--row">
+            <ul class="col--6 display--flex flex--col sz--1 justify--center align--center">
+                <li>Página creada por Alumnos del plantel CBTis122</li>
+            </ul>
 
-        <ul class="display--flex flex--col sz--1 font-sm justify--center align--center">
-            <li><a href="https://github.com/Rassvi/tesis" target="_blank">Repositorio: en github</a></li>
-            <li>ultima actialización: 27/05/23</li>
-        </ul>
+            <ul class="col--6 display--flex flex--col sz--1 justify--center align--center">
+                <li><a href="https://github.com/Rassvi/tesis" target="_blank">Repositorio: en github</a></li>
+                <li>ultima actialización: 27/05/23</li>
+                <li>RIP Odin122 :"v</li>
+            </ul>
+        </section>
     </footer>
     <!-- Fin de Pie de página -->
 </body>

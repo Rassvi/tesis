@@ -1,28 +1,29 @@
 // Colores Principales del Tema
-$primary: #0061a9;
-$secondary: #988e83; // Para el texto
-$brand-color: #c83246;
+$primary: #028ffa !default;
+$secondary: #c9c9c9 !default; // Para el texto
+$brand-color: #f8415a !default;
+$black: #191919 !default;
 
 // Fuente
-$base-font: 1rem;
-
-// Bordes
-$base-border: 1px;
+$base-font: 1rem !default;
 
 // Padding
-$base-padding: 0.75rem;
+$base-padding: 1rem !default;
 
 // Margin
-$base-margin: 1em;
-
-// Bordes redondos
-$base-border-radius: 5px;
+$base-margin: 1em !default;
 
 // Gaps
-$base-gap: 0.5rem;
+$base-gap: 0.5rem !default;
+
+// Bordes redondos
+$base-border-radius: 5px !default;
 
 // Sombra base
-$base-shadow: 1px 3px 1px 1px;
+$base-shadow: 0px 2px 5px 2px !default;
+$base-shadow-sm: 0px 5px 5px 2px !default;
+$base-shadow-md: 0px 6px 6px 4px !default;
+$base-shadow-xl: 0px 8px 8px 6px !default;
 
 // Columnas del grid (flex)
 $grid-columns: 12;

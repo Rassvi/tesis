@@ -1,10 +1,13 @@
 @use '../util/maps' as map;
+@use '../util/variables' as variables;
+@use '../util/mixins' as mixin;
 
 .header {
-    display: flex;
-    flex-direction: row;
-
+    @extend %generic-flex;
+    padding: variables.$base-padding;
+    margin-bottom: variables.$base-margin * 2;
+    box-shadow: variables.$base-shadow-sm rgba(variables.$black, 0.075);
     &__title {
-        font-size: map-get(map.$fuentes, "xl");
+        font-size: map-get(map.$fuentes, "lg");
     }
 }

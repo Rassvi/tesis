@@ -1,6 +1,8 @@
+@use '../util/variables' as variables;
+@use '../util/mixins' as mixin;
+
 .footer {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    @extend %generic-flex;
+    padding-top: variables.$base-padding * 5;
+    padding-bottom: variables.$base-padding * 5;
 }

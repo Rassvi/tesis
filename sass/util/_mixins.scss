@@ -84,12 +84,23 @@
   width: $width;
 }
 
-@mixin borders ($width, $style, $color: variables.$secondary) {
-  border-width: $width * 1px; // *1px para convertir x unidad a px
+@mixin borders ($style, $color: variables.$secondary) {
+  border-width: 1px; // *1px para convertir x unidad a px
   border-style: $style; // recibe el estilo de borde.
   border-color: $color;
 }
 
-@mixin shadow ($color) {
-  box-shadow: variables.$base-shadow $blur-r $spread $color;
+@mixin shadow ($shadow, $color) {
+  .shadow-#{$color} {
+    box-shadow: $shadow $color;
+  }
+}
+
+// extends
+%generic-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
