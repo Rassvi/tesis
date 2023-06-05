@@ -166,14 +166,6 @@ body {
     color: #c9c9c9;
 }
 
-.bg-c--teriary {
-    background-color: #f8415a;
-}
-
-.text-c--teriary {
-    color: #f8415a;
-}
-
 .bg-c--white {
     background-color: #fafbfd;
 }
@@ -2288,12 +2280,6 @@ body {
     border-color: #c9c9c9;
 }
 
-.border--teriary {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #f8415a;
-}
-
 .border--white {
     border-width: 1px;
     border-style: solid;
@@ -2324,12 +2310,6 @@ body {
     border-color: #c9c9c9;
 }
 
-.border--dotted-teriary {
-    border-width: 1px;
-    border-style: dotted;
-    border-color: #f8415a;
-}
-
 .border--dotted-white {
     border-width: 1px;
     border-style: dotted;
@@ -2358,12 +2338,6 @@ body {
     border-width: 1px;
     border-style: dashed;
     border-color: #c9c9c9;
-}
-
-.border--dashed-teriary {
-    border-width: 1px;
-    border-style: dashed;
-    border-color: #f8415a;
 }
 
 .border--dashed-white {
